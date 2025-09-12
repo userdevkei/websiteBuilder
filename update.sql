@@ -1,0 +1,1 @@
+UPDATE `settings` SET `value` = '6.7' WHERE `settings`.`name` = 'current_version';
