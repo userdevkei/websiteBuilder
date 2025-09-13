@@ -38,6 +38,10 @@ return [
             'driver' => 'stack',
             'channels' => ['daily'],
             'ignore_exceptions' => false,
+            'deprecations' => [
+                'driver' => 'single',
+                'path' => storage_path('logs/deprecations.log'),
+            ],
         ],
 
         'single' => [

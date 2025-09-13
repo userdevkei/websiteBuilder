@@ -30,7 +30,7 @@
         </div>
         <!--end of container-->
     </section>
-    
+
 
     <section class="text-center">
         <div class="container">
@@ -52,7 +52,7 @@
         <div class="container">
 
             <div class="row pricing-headline">
-                <div class="col-md-12 text-center"> 
+                <div class="col-md-12 text-center">
                     <button class="btn btn--primary type--uppercase btn-hop mb-0" id="btn-monthly">
                         {{ _lang('Monthly Plan') }}
                     </button>
@@ -65,7 +65,7 @@
 
             <div class="row pricing-content">
                 @php $currency = currency(get_option('currency','USD')); @endphp
-                
+
                 @foreach(\App\Package::all() as $package)
                     <div class="col-md-4 monthly-package">
                         <div class="pricing pricing-1 boxed boxed--lg boxed--border boxed--emphasis">
@@ -116,7 +116,7 @@
                                     <span class="checkmark bg--primary-1"></span>
                                     @if ($package->type == 'free')
                                     <span>{{ $package->websites_limit.' '._lang('Websites') }}</span>
-                                    @else 
+                                    @else
                                     <span>{{ unserialize($package->websites_limit)['yearly'].' '._lang('Websites') }}</span>
                                     @endif
                                 </li>
@@ -135,7 +135,7 @@
         </div>
         <!--end of container-->
     </section>
-    
+
     @if(\App\Faq::count() > 0)
         <section class="bg--secondary">
             <div class="container">
@@ -159,13 +159,13 @@
             <!--end of container-->
         </section>
     @endif
-    
+
 
 @endsection
 @section('js-script')
 
-    <script type="text/javascript">     
-        (function($){		
+    <script type="text/javascript">
+        (function($){
 			"use strict";
             $('body').on( 'click', '#btn-monthly', function(){
                 $(this).addClass('btn-hop');
