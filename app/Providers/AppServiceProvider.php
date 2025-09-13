@@ -24,6 +24,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // Add this helper for admin assets
+        app()->singleton('admin.asset', function () {
+            return function ($path) {
+                $base = app()->environment('local')
+                    ? 'backend/assets/admin'
+                    : 'public/backend/assets/admin';
+                return asset($base . '/' . ltrim($path, '/'));
+            };
+        });
     }
 }

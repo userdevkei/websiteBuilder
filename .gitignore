@@ -7,7 +7,6 @@ vendor
 
 .env.*.php
 .env.php
-.htaccess
 /.htaccess
 *.log
 /node_modules
